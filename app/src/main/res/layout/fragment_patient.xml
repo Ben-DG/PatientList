@@ -9,20 +9,21 @@
         android:id="@+id/name_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="24dp"
+        android:layout_margin="16dp"
         android:text="@string/patient_name"/>
 
     <TextView
         android:id="@+id/id_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="24dp"
+        android:layout_margin="16dp"
         android:text="@string/patient_id"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/picture_button"
+        android:contentDescription="@string/picture_button_description"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add Picture"/>
+        android:layout_height="match_parent"
+        android:src="@android:drawable/ic_menu_camera"/>
 
 </LinearLayout>

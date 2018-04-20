@@ -29,4 +29,8 @@ public class Patient {
     public void setName(String name) {
         mName = name;
     }
+
+    public String getPhotoFilename() {
+        return "IMG_" + getId() + ".jpg";
+    }
 }

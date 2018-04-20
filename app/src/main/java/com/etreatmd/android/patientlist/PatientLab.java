@@ -2,16 +2,14 @@ package com.etreatmd.android.patientlist;
 
 import android.content.Context;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Created by Ben on 4/18/2018.
- */
 
 public class PatientLab {
     private static PatientLab sPatientLab;
 
+    private Context mContext;
     private List<Patient> mPatients;
 
     public static PatientLab get(Context context) {
@@ -23,10 +21,7 @@ public class PatientLab {
 
     private PatientLab(Context context) {
         mPatients = new ArrayList<>();
-        for (int i = 0; i < 25; i++) {
-            Patient patient = new Patient("John", Integer.toString(i));
-            mPatients.add(patient);
-        }
+        mContext = context.getApplicationContext();
     }
 
     public List<Patient> getPatients() {
@@ -41,5 +36,14 @@ public class PatientLab {
         }
 
         return null;
+    }
+
+    public File getPhotoFile(Patient patient) {
+        File fileDir = mContext.getFilesDir();
+        return new File(fileDir, patient.getPhotoFilename());
+    }
+
+    public void addPatients(List<Patient> patients) {
+        mPatients.addAll(patients);
     }
 }
